@@ -1,20 +1,16 @@
 package cn.ddsxy.ddlx.controller;
 
+import cn.ddsxy.ddlx.exception.SupportException;
 import cn.ddsxy.ddlx.model.DeDao;
 import cn.ddsxy.ddlx.model.User;
 import cn.ddsxy.ddlx.service.UserService;
-import cn.ddsxy.ddlx.util.HibernateValidatorMessageLoad;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.Errors;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
-import javax.validation.Validator;
-import java.io.IOException;
 import java.util.Date;
 
 
@@ -26,12 +22,13 @@ public class TestController {
 
     @RequestMapping("/index")
     @ResponseBody
-    public Object index(){
+    public Object index() throws Exception{
         /*DeDao deDao = new DeDao();
         deDao.setName("测试");
         deDao.setDate(new Date());
         return deDao;*/
-        return userService.getId(8);
+        throw new RuntimeException("sss");
+        //return userService.getId(8);
     }
 
     @RequestMapping("/set")

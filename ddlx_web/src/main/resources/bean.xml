@@ -14,4 +14,6 @@
 
 	<bean class="cn.ddsxy.ddlx.util.HibernateValidatorMessageLoad" />
 
+	<bean class="cn.ddsxy.ddlx.web.ControllerAdvice.SupportController"/>
+
 </beans>
