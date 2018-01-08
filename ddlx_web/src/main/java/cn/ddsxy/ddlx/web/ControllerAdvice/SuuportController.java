@@ -7,6 +7,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class SuuportController {
 
     /**
+     * 登录页面
+     * @return
+     */
+    @RequestMapping("/login")
+    public String loginPage(){
+        return "login";
+    }
+
+
+    /**
+     * 没有权限访问
+     *
+     * @return
+     */
+    @RequestMapping("/403")
+    public String errPage403() {
+        return "403";
+    }
+
+    /**
      * 没找到页面404
      *
      * @return

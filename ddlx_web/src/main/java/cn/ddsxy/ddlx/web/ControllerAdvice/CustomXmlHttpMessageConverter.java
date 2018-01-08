@@ -1,4 +1,4 @@
-package cn.ddsxy.ddlx.common;
+package cn.ddsxy.ddlx.web.ControllerAdvice;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.XppDriver;

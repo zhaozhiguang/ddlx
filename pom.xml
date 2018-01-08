@@ -29,11 +29,11 @@
         <spring.version>4.3.2.RELEASE</spring.version>
         <jedis.version>2.7.3</jedis.version>
         <fastjson.version>1.1.41</fastjson.version>
-        <jackson.version>2.9.2</jackson.version>
         <junit.version>4.12</junit.version>
         <dom4j.version>1.6.1</dom4j.version>
         <hibernatevalidator.version>5.4.1.Final</hibernatevalidator.version>
         <xstream.version>1.4.10</xstream.version>
+        <shiro.version>1.3.2</shiro.version>
         <!-- 编码 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -201,8 +201,19 @@
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-core</artifactId>
-            <version>1.3.2</version>
+            <version>${shiro.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-web</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+
 
     </dependencies>
 

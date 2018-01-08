@@ -3,6 +3,7 @@ package cn.ddsxy.ddlx.controller;
 import cn.ddsxy.ddlx.model.DeDao;
 import cn.ddsxy.ddlx.model.User;
 import cn.ddsxy.ddlx.service.UserService;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -19,6 +20,7 @@ public class TestController {
     @Autowired
     private UserService userService;
 
+    @RequiresRoles("hh")
     @RequestMapping("/index")
     @ResponseBody
     public Object index() {
