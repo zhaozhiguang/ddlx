@@ -14,7 +14,7 @@ public class Test2Controller {
     @ResponseBody
     public Object index2(){
         DeDao deDao = new DeDao();
-        deDao.setName("测试2");
+        deDao.setName("测试1");
         deDao.setDate(new Date());
         return deDao;
     }

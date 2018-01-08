@@ -25,14 +25,12 @@
 		<!-- 配置fastjson处理json返回 -->
 		<mvc:message-converters>
 
-			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
-				<constructor-arg value="UTF-8"/>
-			</bean>
+			<bean class="cn.ddsxy.ddlx.common.CustomXmlHttpMessageConverter"/>
 
 			<bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
 				<property name="supportedMediaTypes">
 					<list>
-						<value>text/html;charset=UTF-8</value>
+						<!--<value>text/html;charset=UTF-8</value>-->
 						<value>application/json;charset=UTF-8</value>
 					</list>
 				</property>
@@ -67,6 +65,11 @@
 		<property name="maxInMemorySize" value="4096" />
 		<property name="defaultEncoding" value="UTF-8" />
 	</bean>-->
+
+	<!-- 异常处理 -->
+	<bean class="cn.ddsxy.ddlx.web.ControllerAdvice.SupportHandlerExceptionResolver"/>
+
+	<bean class="cn.ddsxy.ddlx.web.ControllerAdvice.SuuportController"/>
 
 	<import resource="hibernateValidator.xml"/>
 

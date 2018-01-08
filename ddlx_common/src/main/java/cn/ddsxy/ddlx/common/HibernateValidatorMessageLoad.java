@@ -1,4 +1,4 @@
-package cn.ddsxy.ddlx.util;
+package cn.ddsxy.ddlx.common;
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;

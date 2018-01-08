@@ -1,6 +1,5 @@
 package cn.ddsxy.ddlx.controller;
 
-import cn.ddsxy.ddlx.exception.SupportException;
 import cn.ddsxy.ddlx.model.DeDao;
 import cn.ddsxy.ddlx.model.User;
 import cn.ddsxy.ddlx.service.UserService;
@@ -22,13 +21,13 @@ public class TestController {
 
     @RequestMapping("/index")
     @ResponseBody
-    public Object index() throws Exception{
+    public Object index() {
         /*DeDao deDao = new DeDao();
         deDao.setName("测试");
         deDao.setDate(new Date());
         return deDao;*/
-        throw new RuntimeException("sss");
-        //return userService.getId(8);
+        //throw new RuntimeException("123");
+        return userService.getId(8);
     }
 
     @RequestMapping("/set")
