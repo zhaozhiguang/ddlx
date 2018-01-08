@@ -49,7 +49,7 @@
 		</property>
 		<property name="filterChainDefinitions">
 			<value>
-				/** = user
+				/** = anon
 			</value>
 		</property>
 	</bean>

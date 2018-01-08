@@ -25,6 +25,10 @@
 		<!-- 配置fastjson处理json返回 -->
 		<mvc:message-converters>
 
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<property name="defaultCharset" value="utf-8"/>
+			</bean>
+
 			<bean class="cn.ddsxy.ddlx.web.ControllerAdvice.CustomXmlHttpMessageConverter"/>
 
 			<bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
@@ -71,8 +75,15 @@
 
 	<bean class="cn.ddsxy.ddlx.web.ControllerAdvice.SuuportController"/>
 
+	<aop:config proxy-target-class="true"/>
+
+	<!--<aop:aspectj-autoproxy />-->
+
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
+
+	<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor"/>
+
 	<import resource="hibernateValidator.xml"/>
 
-	<aop:config proxy-target-class="true" />
 
 </beans>
