@@ -57,11 +57,12 @@
 		默认使用注解来管理事务行为 -->
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 
-	<aop:aspectj-autoproxy />
+	<aop:aspectj-autoproxy proxy-target-class="true" />
 
 	<aop:config proxy-target-class="true"/>
 
 	<import resource="shiro.xml"/>
+
 	<import resource="bean.xml"/>
 
 </beans>

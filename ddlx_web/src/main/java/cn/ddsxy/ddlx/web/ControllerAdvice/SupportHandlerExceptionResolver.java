@@ -14,6 +14,7 @@ public class SupportHandlerExceptionResolver implements HandlerExceptionResolver
 
     public ModelAndView resolveException(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) {
         System.err.println("进入异常处理-------------------------");
+        e.printStackTrace();
         return null;
     }
 

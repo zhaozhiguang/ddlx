@@ -77,9 +77,7 @@
 
 	<aop:config proxy-target-class="true"/>
 
-	<!--<aop:aspectj-autoproxy />-->
-
-	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
+	<aop:aspectj-autoproxy proxy-target-class="true" />
 
 	<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor"/>
 
