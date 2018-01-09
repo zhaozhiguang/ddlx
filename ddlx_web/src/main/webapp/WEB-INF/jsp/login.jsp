@@ -12,5 +12,6 @@
 </head>
 <body>
 <h1>login</h1>
+<font color="red">${shiroLoginFailure}</font>
 </body>
 </html>
