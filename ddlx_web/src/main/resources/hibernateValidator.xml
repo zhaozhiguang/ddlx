@@ -16,6 +16,8 @@
 	http://www.springframework.org/schema/mvc  
     http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
 
+	<bean class="cn.ddsxy.ddlx.common.HibernateValidatorMessageLoad" />
+
 	<!-- 国际化配置 -->
 	<bean id="localeResolver"
 		  class="org.springframework.web.servlet.i18n.CookieLocaleResolver" />

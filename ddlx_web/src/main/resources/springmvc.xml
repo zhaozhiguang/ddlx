@@ -29,7 +29,7 @@
 				<property name="defaultCharset" value="utf-8"/>
 			</bean>
 
-			<bean class="cn.ddsxy.ddlx.web.ControllerAdvice.CustomXmlHttpMessageConverter"/>
+			<bean class="cn.ddsxy.ddlx.common.CustomXmlHttpMessageConverter"/>
 
 			<bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
 				<property name="supportedMediaTypes">
@@ -71,9 +71,7 @@
 	</bean>-->
 
 	<!-- 异常处理 -->
-	<bean class="cn.ddsxy.ddlx.web.ControllerAdvice.SupportHandlerExceptionResolver"/>
-
-	<bean class="cn.ddsxy.ddlx.web.ControllerAdvice.SuuportController"/>
+	<bean class="cn.ddsxy.ddlx.common.SupportHandlerExceptionResolver"/>
 
 	<aop:config proxy-target-class="true"/>
 

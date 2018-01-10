@@ -22,7 +22,7 @@
 	</bean>
 
 	<!-- 自定义realm -->
-	<bean id="shiroDbRealm" class="cn.ddsxy.ddlx.web.ControllerAdvice.ShiroDbRealm">
+	<bean id="shiroDbRealm" class="cn.ddsxy.ddlx.shiro.ShiroDbRealm">
 		<property name="credentialsMatcher" ref="credentialsMatcher"/>
 	</bean>
 

@@ -12,9 +12,6 @@
 	http://www.springframework.org/schema/tx 
 	http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
-	<bean class="cn.ddsxy.ddlx.common.HibernateValidatorMessageLoad" />
-
-
 	<!-- Kaptcha验证码生成器 -->
 	<bean id="captchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha">
 		<property name="config">
