@@ -1,5 +1,6 @@
 package cn.ddsxy.ddlx.shiro;
 
+import cn.ddsxy.ddlx.util.AjaxUtil;
 import cn.ddsxy.ddlx.util.CaptchaUtil;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
@@ -96,7 +97,21 @@ public class CaptchaFormAuthentcationFileter extends FormAuthenticationFilter {
      */
     @Override
     protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
-        return super.onAccessDenied(request, response);
+        if (this.isLoginRequest(request, response)) {
+            if (this.isLoginSubmission(request, response)) {
+                return this.executeLogin(request, response);
+            } else {
+                return true;
+            }
+        } else {
+            if(AjaxUtil.isAjaxRequest(request)){
+                response.setContentType("application/json;charset=UTF-8");
+                response.getWriter().print("你咩有登录,跳转到登录页面");
+            }else{
+                this.saveRequestAndRedirectToLogin(request, response);
+            }
+            return false;
+        }
     }
 
     /**
