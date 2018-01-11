@@ -1,8 +1,11 @@
 package cn.ddsxy.ddlx.service;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.BeanPropertyBindingResult;
+import org.springframework.validation.BindingResult;
 
 @Aspect
 @Component
@@ -14,20 +17,25 @@ public class aspectjDemo {
     }
 
     @Before(value="point()")
-    public void before(){
-        System.out.println("transaction begin");
+    public void before(JoinPoint joinPoint){
+
     }
 
     @AfterReturning(value = "point()")
     public void after(){
-        System.out.println("transaction commit");
+
     }
 
      @Around("point()")
      public Object around(ProceedingJoinPoint joinPoint) throws Throwable{
-        System.out.println("transaction begin");
-         Object proceed = joinPoint.proceed();
-         System.out.println("transaction commit");
-         return proceed;
-    }
+         Object[] args = joinPoint.getArgs();
+         for(Object arg : args){
+             if(BindingResult.class.isInstance(arg)){
+                 if(((BindingResult)arg).hasErrors()){
+                     return ((BindingResult)arg).getFieldError().getDefaultMessage();
+                 }
+             }
+         }
+         return joinPoint.proceed();
+     }
 }

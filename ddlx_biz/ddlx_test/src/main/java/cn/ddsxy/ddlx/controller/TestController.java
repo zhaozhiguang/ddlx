@@ -33,11 +33,6 @@ public class TestController {
     @RequestMapping("/index")
     @ResponseBody
     public Object index() {
-        /*DeDao deDao = new DeDao();
-        deDao.setName("测试");
-        deDao.setDate(new Date());
-        return deDao;*/
-        //throw new RuntimeException("123");
         Subject subject = SecurityUtils.getSubject();
         boolean hh = subject.hasRole("hh");
         System.err.println(hh);
@@ -47,10 +42,6 @@ public class TestController {
     @RequestMapping("/set")
     @ResponseBody
     public Object setId(@Valid User user, BindingResult bindingResult){
-        if(bindingResult.hasErrors()){
-            System.err.println(bindingResult.getFieldError().getDefaultMessage());
-            return bindingResult.getFieldError().getDefaultMessage();
-        }
         DeDao deDao = new DeDao();
         deDao.setName("测试");
         deDao.setDate(new Date());
