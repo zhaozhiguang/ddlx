@@ -14,8 +14,8 @@ public class CaptchaUserNamePassWordToken extends UsernamePasswordToken {
         this.catcha = catcha;
     }
 
-    public CaptchaUserNamePassWordToken(String username, String passwrod, String catcha) {
-        super(username, passwrod);
+    public CaptchaUserNamePassWordToken(String username, String passwrod, String catcha, boolean rememberMe, String host) {
+        super(username, passwrod, rememberMe, host);
         this.catcha = catcha;
     }
 

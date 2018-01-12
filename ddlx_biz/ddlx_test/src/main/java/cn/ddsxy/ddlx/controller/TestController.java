@@ -24,11 +24,6 @@ public class TestController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("")
-    public String in(){
-        return "index";
-    }
-
     //@RequiresRoles("fff")
     @RequestMapping("/index")
     @ResponseBody

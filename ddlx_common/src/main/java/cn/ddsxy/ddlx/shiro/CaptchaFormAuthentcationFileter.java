@@ -53,7 +53,9 @@ public class CaptchaFormAuthentcationFileter extends FormAuthenticationFilter {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String captcha = request.getParameter("captcha");
-        return new CaptchaUserNamePassWordToken(username, password==null?"":password, captcha);
+        boolean rememberMe = request.getParameter("rememberMe")!=null;
+        String host = request.getRemoteHost();
+        return new CaptchaUserNamePassWordToken(username, password==null?"":password, captcha, rememberMe, host);
     }
 
     @Override
@@ -123,6 +125,12 @@ public class CaptchaFormAuthentcationFileter extends FormAuthenticationFilter {
      */
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
+        if (this.isLoginRequest(request, response)) {
+            if (this.isLoginSubmission(request, response)) {
+                return false;
+            }
+            return true;
+        }
         return super.isAccessAllowed(request, response, mappedValue);
     }
 }
